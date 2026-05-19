@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">GoalPulse</string>
+    <string name="nav_home">Hom</string>
+    <string name="nav_matches">Match</string>
+    <string name="nav_live">Live</string>
+    <string name="nav_standings">Standings</string>
+    <string name="nav_profile">Profile</string>
+</resources>
+

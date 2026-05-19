@@ -1,0 +1,28 @@
+<resources>
+    <string name="profile_title">Your Profile</string>
+    <string name="profile_subtitle">Personalize your match experience with appearance, language, and alerts.</string>
+    <string name="profile_footer">FAN SETTINGS</string>
+
+    <string name="profile_preferences_title">⚙️ Preferences</string>
+    <string name="profile_preferences_subtitle">Theme, language, favorite teams, and notifications</string>
+
+    <string name="profile_appearance_badge">🌙 APPEARANCE</string>
+    <string name="profile_dark_mode_title">Dark Mode</string>
+    <string name="profile_dark_mode_enabled_desc">Enabled for stadium-night contrast</string>
+    <string name="profile_dark_mode_disabled_desc">Use light mode for daytime readability</string>
+
+    <string name="profile_language_badge">🌐 LANGUAGE</string>
+    <string name="profile_language_desc">Translation is currently available in English, Bangla, Spanish, and Hindi.</string>
+
+    <string name="profile_favorites_badge">⭐ FAVORITES</string>
+    <string name="profile_favorites_desc">Tap a team from the standings or schedule to add them as a favorite and receive instant goal and result updates.</string>
+
+    <string name="profile_notifications_badge">🔔 NOTIFICATIONS</string>
+    <string name="profile_notifications_desc">Goal alerts, match starts, and full-time results are ready for Firebase Cloud Messaging integration.</string>
+
+    <string name="language_english">English</string>
+    <string name="language_bangla">Bangla</string>
+    <string name="language_spanish">Spanish</string>
+    <string name="language_hindi">Hindi</string>
+</resources>
+

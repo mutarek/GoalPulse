@@ -1,0 +1,9 @@
+com.prosolution.feature.team.feature_team-pngs-0 /Users/shebaplatform/workSpace/GoalPulse/feature_team/build/generated/res/pngs/release
+com.prosolution.feature.team.feature_team-updated_navigation_xml-1 /Users/shebaplatform/workSpace/GoalPulse/feature_team/build/generated/updated_navigation_xml/release
+com.prosolution.feature.team.feature_team-mergeReleaseResources-2 /Users/shebaplatform/workSpace/GoalPulse/feature_team/build/intermediates/incremental/release/mergeReleaseResources/merged.dir
+com.prosolution.feature.team.feature_team-mergeReleaseResources-3 /Users/shebaplatform/workSpace/GoalPulse/feature_team/build/intermediates/incremental/release/mergeReleaseResources/stripped.dir
+com.prosolution.feature.team.feature_team-release-4 /Users/shebaplatform/workSpace/GoalPulse/feature_team/build/intermediates/merged_res/release/mergeReleaseResources
+com.prosolution.feature.team.feature_team-release-5 /Users/shebaplatform/workSpace/GoalPulse/feature_team/build/intermediates/packaged_res/release/packageReleaseResources
+com.prosolution.feature.team.feature_team-main-6 /Users/shebaplatform/workSpace/GoalPulse/feature_team/src/main/res
+com.prosolution.feature.team.feature_team-release-7 /Users/shebaplatform/workSpace/GoalPulse/feature_team/src/release/res
+gradleHome-0 /Users/shebaplatform/.gradle

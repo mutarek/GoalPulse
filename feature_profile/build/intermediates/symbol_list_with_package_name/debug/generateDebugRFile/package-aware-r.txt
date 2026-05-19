@@ -1,0 +1,20 @@
+com.prosolution.feature.profile
+string language_bangla
+string language_english
+string language_hindi
+string language_spanish
+string profile_appearance_badge
+string profile_dark_mode_disabled_desc
+string profile_dark_mode_enabled_desc
+string profile_dark_mode_title
+string profile_favorites_badge
+string profile_favorites_desc
+string profile_footer
+string profile_language_badge
+string profile_language_desc
+string profile_notifications_badge
+string profile_notifications_desc
+string profile_preferences_subtitle
+string profile_preferences_title
+string profile_subtitle
+string profile_title

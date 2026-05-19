@@ -1,0 +1,46 @@
+{
+  "matches": [
+    {
+      "id": "match_1001",
+      "home_team": {
+        "id": "arg",
+        "name": "Argentina",
+        "short_code": "ARG",
+        "crest_url": "https://cdn.example.com/arg.png",
+        "group": "C"
+      },
+      "away_team": {
+        "id": "fra",
+        "name": "France",
+        "short_code": "FRA",
+        "crest_url": "https://cdn.example.com/fra.png",
+        "group": "D"
+      },
+      "start_time_utc": "2026-06-18T20:00:00Z",
+      "stadium": "MetLife Stadium",
+      "home_score": 2,
+      "away_score": 1,
+      "minute": 78,
+      "status": "LIVE"
+    }
+  ],
+  "standings": [
+    {
+      "team": {
+        "id": "arg",
+        "name": "Argentina",
+        "short_code": "ARG",
+        "crest_url": "https://cdn.example.com/arg.png",
+        "group": "C"
+      },
+      "played": 3,
+      "won": 2,
+      "draw": 1,
+      "lost": 0,
+      "goals_for": 7,
+      "goals_against": 2,
+      "points": 7
+    }
+  ]
+}
+

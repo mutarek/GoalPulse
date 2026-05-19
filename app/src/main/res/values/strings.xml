@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">GoalPulse</string>
+    <string name="splash_tagline">World Cup 2026 Companion</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_matches">Matches</string>
+    <string name="nav_live">Live</string>
+    <string name="nav_standings">Standings</string>
+    <string name="nav_profile">Profile</string>
+</resources>

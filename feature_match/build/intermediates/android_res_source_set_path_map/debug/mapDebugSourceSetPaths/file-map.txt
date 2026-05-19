@@ -1,0 +1,9 @@
+com.prosolution.feature.match.feature_match-pngs-0 /Users/shebaplatform/workSpace/GoalPulse/feature_match/build/generated/res/pngs/debug
+com.prosolution.feature.match.feature_match-updated_navigation_xml-1 /Users/shebaplatform/workSpace/GoalPulse/feature_match/build/generated/updated_navigation_xml/debug
+com.prosolution.feature.match.feature_match-mergeDebugResources-2 /Users/shebaplatform/workSpace/GoalPulse/feature_match/build/intermediates/incremental/debug/mergeDebugResources/merged.dir
+com.prosolution.feature.match.feature_match-mergeDebugResources-3 /Users/shebaplatform/workSpace/GoalPulse/feature_match/build/intermediates/incremental/debug/mergeDebugResources/stripped.dir
+com.prosolution.feature.match.feature_match-debug-4 /Users/shebaplatform/workSpace/GoalPulse/feature_match/build/intermediates/merged_res/debug/mergeDebugResources
+com.prosolution.feature.match.feature_match-debug-5 /Users/shebaplatform/workSpace/GoalPulse/feature_match/build/intermediates/packaged_res/debug/packageDebugResources
+com.prosolution.feature.match.feature_match-debug-6 /Users/shebaplatform/workSpace/GoalPulse/feature_match/src/debug/res
+com.prosolution.feature.match.feature_match-main-7 /Users/shebaplatform/workSpace/GoalPulse/feature_match/src/main/res
+gradleHome-0 /Users/shebaplatform/.gradle

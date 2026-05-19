@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">GoalPulse</string>
+    <string name="nav_home">होम</string>
+    <string name="nav_matches">मैच</string>
+    <string name="nav_live">लाइव</string>
+    <string name="nav_standings">स्टैंडिंग्स</string>
+    <string name="nav_profile">प्रोफाइल</string>
+</resources>
+

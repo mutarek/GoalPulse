@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="language_bangla">Bangla</string>
+    <string name="language_english">Ingles</string>
+    <string name="language_hindi">Hindi</string>
+    <string name="language_spanish">Espanol</string>
+    <string name="profile_appearance_badge">🌙 APARIENCIA</string>
+    <string name="profile_dark_mode_disabled_desc">Usa modo claro para mejor lectura diurna</string>
+    <string name="profile_dark_mode_enabled_desc">Activado para mejor contraste nocturno</string>
+    <string name="profile_dark_mode_title">Modo oscuro</string>
+    <string name="profile_favorites_badge">⭐ FAVORITOS</string>
+    <string name="profile_favorites_desc">Toca un equipo en tabla o calendario para marcarlo favorito y recibir alertas de gol y resultados.</string>
+    <string name="profile_footer">AJUSTES DE FAN</string>
+    <string name="profile_language_badge">🌐 IDIOMA</string>
+    <string name="profile_language_desc">La traduccion esta disponible en ingles, bangla, espanol e hindi.</string>
+    <string name="profile_notifications_badge">🔔 NOTIFICACIONES</string>
+    <string name="profile_notifications_desc">Alertas de gol, inicio del partido y resultado final listas para integracion con FCM.</string>
+    <string name="profile_preferences_subtitle">Tema, idioma, equipos favoritos y notificaciones</string>
+    <string name="profile_preferences_title">⚙️ Preferencias</string>
+    <string name="profile_subtitle">Personaliza tu experiencia de partidos con apariencia, idioma y alertas.</string>
+    <string name="profile_title">Tu perfil</string>
+</resources>

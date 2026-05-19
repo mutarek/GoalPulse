@@ -1,0 +1,9 @@
+com.prosolution.feature.predictions.feature_predictions-pngs-0 /Users/shebaplatform/workSpace/GoalPulse/feature_predictions/build/generated/res/pngs/release
+com.prosolution.feature.predictions.feature_predictions-updated_navigation_xml-1 /Users/shebaplatform/workSpace/GoalPulse/feature_predictions/build/generated/updated_navigation_xml/release
+com.prosolution.feature.predictions.feature_predictions-mergeReleaseResources-2 /Users/shebaplatform/workSpace/GoalPulse/feature_predictions/build/intermediates/incremental/release/mergeReleaseResources/merged.dir
+com.prosolution.feature.predictions.feature_predictions-mergeReleaseResources-3 /Users/shebaplatform/workSpace/GoalPulse/feature_predictions/build/intermediates/incremental/release/mergeReleaseResources/stripped.dir
+com.prosolution.feature.predictions.feature_predictions-release-4 /Users/shebaplatform/workSpace/GoalPulse/feature_predictions/build/intermediates/merged_res/release/mergeReleaseResources
+com.prosolution.feature.predictions.feature_predictions-release-5 /Users/shebaplatform/workSpace/GoalPulse/feature_predictions/build/intermediates/packaged_res/release/packageReleaseResources
+com.prosolution.feature.predictions.feature_predictions-main-6 /Users/shebaplatform/workSpace/GoalPulse/feature_predictions/src/main/res
+com.prosolution.feature.predictions.feature_predictions-release-7 /Users/shebaplatform/workSpace/GoalPulse/feature_predictions/src/release/res
+gradleHome-0 /Users/shebaplatform/.gradle

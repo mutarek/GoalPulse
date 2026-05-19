@@ -1,0 +1,9 @@
+com.prosolution.feature.notifications.feature_notifications-pngs-0 /Users/shebaplatform/workSpace/GoalPulse/feature_notifications/build/generated/res/pngs/debug
+com.prosolution.feature.notifications.feature_notifications-updated_navigation_xml-1 /Users/shebaplatform/workSpace/GoalPulse/feature_notifications/build/generated/updated_navigation_xml/debug
+com.prosolution.feature.notifications.feature_notifications-mergeDebugResources-2 /Users/shebaplatform/workSpace/GoalPulse/feature_notifications/build/intermediates/incremental/debug/mergeDebugResources/merged.dir
+com.prosolution.feature.notifications.feature_notifications-mergeDebugResources-3 /Users/shebaplatform/workSpace/GoalPulse/feature_notifications/build/intermediates/incremental/debug/mergeDebugResources/stripped.dir
+com.prosolution.feature.notifications.feature_notifications-debug-4 /Users/shebaplatform/workSpace/GoalPulse/feature_notifications/build/intermediates/merged_res/debug/mergeDebugResources
+com.prosolution.feature.notifications.feature_notifications-debug-5 /Users/shebaplatform/workSpace/GoalPulse/feature_notifications/build/intermediates/packaged_res/debug/packageDebugResources
+com.prosolution.feature.notifications.feature_notifications-debug-6 /Users/shebaplatform/workSpace/GoalPulse/feature_notifications/src/debug/res
+com.prosolution.feature.notifications.feature_notifications-main-7 /Users/shebaplatform/workSpace/GoalPulse/feature_notifications/src/main/res
+gradleHome-0 /Users/shebaplatform/.gradle

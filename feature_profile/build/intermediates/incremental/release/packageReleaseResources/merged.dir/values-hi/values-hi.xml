@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="language_bangla">Bangla</string>
+    <string name="language_english">English</string>
+    <string name="language_hindi">Hindi</string>
+    <string name="language_spanish">Spanish</string>
+    <string name="profile_appearance_badge">🌙 APPEARANCE</string>
+    <string name="profile_dark_mode_disabled_desc">Daytime readability ke liye light mode use karein</string>
+    <string name="profile_dark_mode_enabled_desc">Stadium-night contrast ke liye enabled</string>
+    <string name="profile_dark_mode_title">Dark mode</string>
+    <string name="profile_favorites_badge">⭐ FAVORITES</string>
+    <string name="profile_favorites_desc">Standings ya schedule se team select karke favorite banayein aur goal/result updates paayein.</string>
+    <string name="profile_footer">FAN SETTINGS</string>
+    <string name="profile_language_badge">🌐 LANGUAGE</string>
+    <string name="profile_language_desc">Translation English, Bangla, Spanish aur Hindi mein available hai.</string>
+    <string name="profile_notifications_badge">🔔 NOTIFICATIONS</string>
+    <string name="profile_notifications_desc">Goal alerts, match start aur full-time results FCM integration ke liye ready hain.</string>
+    <string name="profile_preferences_subtitle">Theme, language, favorite teams aur notifications</string>
+    <string name="profile_preferences_title">⚙️ Preferences</string>
+    <string name="profile_subtitle">Appearance, language aur alerts ke saath apna match experience personalize karein.</string>
+    <string name="profile_title">Aapka profile</string>
+</resources>

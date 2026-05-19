@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.prosolution.feature.home.HomeViewModelTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-05-19T06:24:08.119Z" hostname="shebas-MacBook-Air-2.local" time="0.068">
+  <properties/>
+  <testcase name="refresh emits live and upcoming matches" classname="com.prosolution.feature.home.HomeViewModelTest" time="0.067"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

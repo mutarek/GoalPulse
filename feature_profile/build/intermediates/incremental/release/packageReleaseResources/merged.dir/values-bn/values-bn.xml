@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="language_bangla">Bangla</string>
+    <string name="language_english">English</string>
+    <string name="language_hindi">Hindi</string>
+    <string name="language_spanish">Spanish</string>
+    <string name="profile_appearance_badge">🌙 APPEARANCE</string>
+    <string name="profile_dark_mode_disabled_desc">Daytime readability er jonno light mode use korun</string>
+    <string name="profile_dark_mode_enabled_desc">Stadium-night contrast er jonno enabled</string>
+    <string name="profile_dark_mode_title">Dark mode</string>
+    <string name="profile_favorites_badge">⭐ FAVORITES</string>
+    <string name="profile_favorites_desc">Standings ba schedule theke team favorite korun ar goal/result update pan.</string>
+    <string name="profile_footer">FAN SETTINGS</string>
+    <string name="profile_language_badge">🌐 LANGUAGE</string>
+    <string name="profile_language_desc">Translation English, Bangla, Spanish ar Hindi te available.</string>
+    <string name="profile_notifications_badge">🔔 NOTIFICATIONS</string>
+    <string name="profile_notifications_desc">Goal alerts, match start ar full-time result FCM integration er jonno ready.</string>
+    <string name="profile_preferences_subtitle">Theme, bhasha, favorite team ar notifications</string>
+    <string name="profile_preferences_title">⚙️ Preferences</string>
+    <string name="profile_subtitle">Theme, bhasha ar alerts diye apnar match experience personalize korun.</string>
+    <string name="profile_title">Apnar profile</string>
+</resources>

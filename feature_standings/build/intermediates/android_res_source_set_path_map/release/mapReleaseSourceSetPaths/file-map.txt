@@ -1,0 +1,9 @@
+com.prosolution.feature.standings.feature_standings-pngs-0 /Users/shebaplatform/workSpace/GoalPulse/feature_standings/build/generated/res/pngs/release
+com.prosolution.feature.standings.feature_standings-updated_navigation_xml-1 /Users/shebaplatform/workSpace/GoalPulse/feature_standings/build/generated/updated_navigation_xml/release
+com.prosolution.feature.standings.feature_standings-mergeReleaseResources-2 /Users/shebaplatform/workSpace/GoalPulse/feature_standings/build/intermediates/incremental/release/mergeReleaseResources/merged.dir
+com.prosolution.feature.standings.feature_standings-mergeReleaseResources-3 /Users/shebaplatform/workSpace/GoalPulse/feature_standings/build/intermediates/incremental/release/mergeReleaseResources/stripped.dir
+com.prosolution.feature.standings.feature_standings-release-4 /Users/shebaplatform/workSpace/GoalPulse/feature_standings/build/intermediates/merged_res/release/mergeReleaseResources
+com.prosolution.feature.standings.feature_standings-release-5 /Users/shebaplatform/workSpace/GoalPulse/feature_standings/build/intermediates/packaged_res/release/packageReleaseResources
+com.prosolution.feature.standings.feature_standings-main-6 /Users/shebaplatform/workSpace/GoalPulse/feature_standings/src/main/res
+com.prosolution.feature.standings.feature_standings-release-7 /Users/shebaplatform/workSpace/GoalPulse/feature_standings/src/release/res
+gradleHome-0 /Users/shebaplatform/.gradle
