@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/.github/workflows/android-ci.yml">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/.github/workflows/android-ci.yml" />
+              <option name="updatedContent" value="name: Android CI&#10;&#10;on:&#10;  push:&#10;    branches: [ &quot;main&quot;, &quot;develop&quot; ]&#10;  pull_request:&#10;&#10;jobs:&#10;  build:&#10;    runs-on: ubuntu-latest&#10;    timeout-minutes: 30&#10;&#10;    steps:&#10;      - name: Checkout&#10;        uses: actions/checkout@v4&#10;&#10;      - name: Set up JDK 17&#10;        uses: actions/setup-java@v4&#10;        with:&#10;          distribution: temurin&#10;          java-version: 17&#10;          cache: gradle&#10;&#10;      - name: Grant execute permission&#10;        run: chmod +x ./gradlew&#10;&#10;      - name: Unit tests&#10;        run: ./gradlew test&#10;&#10;      - name: Assemble debug&#10;        run: ./gradlew :app:assembleDebug&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/.gitignore">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/.gitignore" />
+              <option name="originalContent" value="*.iml&#10;.gradle&#10;/local.properties&#10;/.idea/caches&#10;/.idea/libraries&#10;/.idea/modules.xml&#10;/.idea/workspace.xml&#10;/.idea/navEditor.xml&#10;/.idea/assetWizardSettings.xml&#10;.DS_Store&#10;/build&#10;/captures&#10;.externalNativeBuild&#10;.cxx&#10;local.properties&#10;" />
+              <option name="updatedContent" value="*.iml&#10;.gradle&#10;/local.properties&#10;/.idea/caches&#10;/.idea/libraries&#10;/.idea/modules.xml&#10;/.idea/workspace.xml&#10;/.idea/navEditor.xml&#10;/.idea/assetWizardSettings.xml&#10;.DS_Store&#10;/build&#10;/captures&#10;.externalNativeBuild&#10;.cxx&#10;local.properties&#10;keystore.properties&#10;*.jks&#10;*.keystore&#10;*.aab&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/README.md">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/README.md" />
+              <option name="updatedContent" value="# GoalPulse - FIFA World Cup Live Score App&#10;&#10;GoalPulse is a modular Android application built with Kotlin and Jetpack Compose for live World Cup coverage.&#10;&#10;## Modules&#10;&#10;- `app`: application shell, navigation, DI wiring&#10;- `common`: shared primitives (`NetworkResult`, dispatchers)&#10;- `core`: domain models, repository contracts, use cases&#10;- `network`: Retrofit + OkHttp + websocket gateway&#10;- `database`: Room entities, DAO, local cache&#10;- `designsystem`: Material 3 theme, reusable UI components&#10;- `feature_*`: feature-first UI modules&#10;&#10;## Architecture&#10;&#10;- Clean Architecture (Presentation / Domain / Data)&#10;- MVVM + `StateFlow`&#10;- Repository Pattern with DTO -&gt; Domain mappers&#10;- Hilt dependency injection&#10;&#10;## Quick Start&#10;&#10;```bash&#10;./gradlew test&#10;./gradlew :app:assembleDebug&#10;```&#10;&#10;## Realtime and Offline&#10;&#10;- Realtime channel scaffolded in `network/RealtimeSocketClient.kt`&#10;- Room cache scaffolded in `database`&#10;- Repository fallback sample data included for resilient demos&#10;&#10;## Security and Release Notes&#10;&#10;- Firebase Analytics / Crashlytics / Messaging dependencies added&#10;- CI workflow at `.github/workflows/android-ci.yml`&#10;- Release minification enabled for `release` build type&#10;- Release resource shrinking enabled for `release` build type&#10;- App Bundle (`.aab`) output prepared for Play Store upload signing&#10;&#10;## Play Store AAB Release&#10;&#10;1. Copy `keystore.properties.example` to `keystore.properties`.&#10;2. Fill in your real upload keystore path and passwords.&#10;3. Build the Play Store bundle:&#10;&#10;```bash&#10;./gradlew :app:bundleRelease&#10;```&#10;&#10;If you prefer environment variables instead of `keystore.properties`, set:&#10;&#10;- `GOALPULSE_UPLOAD_STORE_FILE`&#10;- `GOALPULSE_UPLOAD_STORE_PASSWORD`&#10;- `GOALPULSE_UPLOAD_KEY_ALIAS`&#10;- `GOALPULSE_UPLOAD_KEY_PASSWORD`&#10;&#10;Generated bundle output:&#10;&#10;```text&#10;app/build/outputs/bundle/release/app-release.aab&#10;```&#10;&#10;## Next hardening steps before Play Store submission&#10;&#10;1. Replace `https://api.example.com/worldcup/` with production API and SSL pinning certificate.&#10;2. Add encrypted token manager and refresh token workflow.&#10;3. Add full instrumentation tests and baseline profiles.&#10;4. Configure Firebase App Distribution and Play Console signing / store listing assets.&#10;&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/build.gradle.kts">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/app/build.gradle.kts" />
+              <option name="originalContent" value="plugins {&#10;    alias(libs.plugins.android.application)&#10;    alias(libs.plugins.kotlin.compose)&#10;}&#10;&#10;android {&#10;    namespace = &quot;com.prosolution.goalpulse&quot;&#10;    compileSdk = 36&#10;&#10;    defaultConfig {&#10;        applicationId = &quot;com.prosolution.goalpulse&quot;&#10;        minSdk = 24&#10;        targetSdk = 36&#10;        versionCode = 1&#10;        versionName = &quot;1.0.0&quot;&#10;        testInstrumentationRunner = &quot;androidx.test.runner.AndroidJUnitRunner&quot;&#10;        vectorDrawables.useSupportLibrary = true&#10;    }&#10;&#10;    buildTypes {&#10;        debug {&#10;            applicationIdSuffix = &quot;.debug&quot;&#10;            versionNameSuffix = &quot;-debug&quot;&#10;        }&#10;        release {&#10;            isMinifyEnabled = true&#10;            proguardFiles(&#10;                getDefaultProguardFile(&quot;proguard-android-optimize.txt&quot;),&#10;                &quot;proguard-rules.pro&quot;&#10;            )&#10;        }&#10;    }&#10;&#10;    compileOptions {&#10;        sourceCompatibility = JavaVersion.VERSION_17&#10;        targetCompatibility = JavaVersion.VERSION_17&#10;    }&#10;&#10;    buildFeatures {&#10;        compose = true&#10;        buildConfig = true&#10;    }&#10;&#10;    packaging {&#10;        resources.excludes += &quot;/META-INF/{AL2.0,LGPL2.1}&quot;&#10;    }&#10;}&#10;&#10;dependencies {&#10;    implementation(project(&quot;:common&quot;))&#10;    implementation(project(&quot;:core&quot;))&#10;    implementation(project(&quot;:designsystem&quot;))&#10;    implementation(project(&quot;:feature_home&quot;))&#10;    implementation(project(&quot;:feature_live&quot;))&#10;    implementation(project(&quot;:feature_match&quot;))&#10;    implementation(project(&quot;:feature_standings&quot;))&#10;    implementation(project(&quot;:feature_team&quot;))&#10;    implementation(project(&quot;:feature_profile&quot;))&#10;    implementation(project(&quot;:feature_notifications&quot;))&#10;    implementation(project(&quot;:feature_predictions&quot;))&#10;&#10;    implementation(platform(libs.androidx.compose.bom))&#10;    implementation(libs.androidx.core.ktx)&#10;    implementation(&quot;androidx.appcompat:appcompat:1.7.1&quot;)&#10;    implementation(libs.androidx.lifecycle.runtime.ktx)&#10;    implementation(libs.androidx.lifecycle.runtime.compose)&#10;    implementation(libs.androidx.lifecycle.viewmodel.compose)&#10;    implementation(libs.androidx.activity.compose)&#10;    implementation(libs.androidx.navigation.compose)&#10;    implementation(libs.androidx.core.splashscreen)&#10;    implementation(libs.androidx.compose.material3)&#10;    implementation(libs.androidx.compose.ui)&#10;    implementation(libs.androidx.compose.ui.graphics)&#10;    implementation(libs.androidx.compose.ui.tooling.preview)&#10;    implementation(libs.androidx.compose.material.icons)&#10;&#10;&#10;    implementation(platform(libs.firebase.bom))&#10;    implementation(libs.firebase.analytics)&#10;    implementation(libs.firebase.crashlytics)&#10;    implementation(libs.firebase.messaging)&#10;    implementation(libs.firebase.auth)&#10;    implementation(libs.play.services.auth)&#10;&#10;    testImplementation(libs.junit)&#10;    testImplementation(libs.mockito.core)&#10;    testImplementation(libs.mockito.kotlin)&#10;    testImplementation(libs.kotlinx.coroutines.test)&#10;    testImplementation(libs.turbine)&#10;&#10;    androidTestImplementation(platform(libs.androidx.compose.bom))&#10;    androidTestImplementation(libs.androidx.junit)&#10;    androidTestImplementation(libs.androidx.espresso.core)&#10;    androidTestImplementation(libs.androidx.compose.ui.test.junit4)&#10;&#10;    debugImplementation(libs.androidx.compose.ui.tooling)&#10;    debugImplementation(libs.androidx.compose.ui.test.manifest)&#10;}" />
+              <option name="updatedContent" value="import java.util.Properties&#10;&#10;plugins {&#10;    alias(libs.plugins.android.application)&#10;    alias(libs.plugins.kotlin.compose)&#10;}&#10;&#10;val keystoreProperties = Properties()&#10;val keystorePropertiesFile = rootProject.file(&quot;keystore.properties&quot;)&#10;&#10;if (keystorePropertiesFile.exists()) {&#10;    keystorePropertiesFile.inputStream().use(keystoreProperties::load)&#10;}&#10;&#10;fun propertyOrEnv(propertyName: String, envName: String): String? {&#10;    val propertyValue = keystoreProperties.getProperty(propertyName)?.trim().orEmpty()&#10;    if (propertyValue.isNotEmpty()) return propertyValue&#10;&#10;    val envValue = providers.environmentVariable(envName).orNull?.trim().orEmpty()&#10;    return envValue.ifEmpty { null }&#10;}&#10;&#10;val releaseStoreFilePath = propertyOrEnv(&quot;storeFile&quot;, &quot;GOALPULSE_UPLOAD_STORE_FILE&quot;)&#10;val releaseStorePassword = propertyOrEnv(&quot;storePassword&quot;, &quot;GOALPULSE_UPLOAD_STORE_PASSWORD&quot;)&#10;val releaseKeyAlias = propertyOrEnv(&quot;keyAlias&quot;, &quot;GOALPULSE_UPLOAD_KEY_ALIAS&quot;)&#10;val releaseKeyPassword = propertyOrEnv(&quot;keyPassword&quot;, &quot;GOALPULSE_UPLOAD_KEY_PASSWORD&quot;)&#10;val hasReleaseSigning = listOf(&#10;    releaseStoreFilePath,&#10;    releaseStorePassword,&#10;    releaseKeyAlias,&#10;    releaseKeyPassword&#10;).all { !it.isNullOrBlank() }&#10;&#10;android {&#10;    namespace = &quot;com.prosolution.goalpulse&quot;&#10;    compileSdk = 36&#10;&#10;    signingConfigs {&#10;        if (hasReleaseSigning) {&#10;            create(&quot;release&quot;) {&#10;                storeFile = file(releaseStoreFilePath!!)&#10;                storePassword = releaseStorePassword&#10;                keyAlias = releaseKeyAlias&#10;                keyPassword = releaseKeyPassword&#10;                enableV1Signing = true&#10;                enableV2Signing = true&#10;                enableV3Signing = true&#10;                enableV4Signing = true&#10;            }&#10;        }&#10;    }&#10;&#10;    defaultConfig {&#10;        applicationId = &quot;com.prosolution.goalpulse&quot;&#10;        minSdk = 24&#10;        targetSdk = 36&#10;        versionCode = 2&#10;        versionName = &quot;1.0.1&quot;&#10;        testInstrumentationRunner = &quot;androidx.test.runner.AndroidJUnitRunner&quot;&#10;        vectorDrawables.useSupportLibrary = true&#10;    }&#10;&#10;    androidResources {&#10;        localeFilters += listOf(&quot;en&quot;, &quot;bn&quot;, &quot;es&quot;, &quot;hi&quot;)&#10;    }&#10;&#10;    buildTypes {&#10;        debug {&#10;            applicationIdSuffix = &quot;.debug&quot;&#10;            versionNameSuffix = &quot;-debug&quot;&#10;        }&#10;        release {&#10;            isMinifyEnabled = true&#10;            isShrinkResources = true&#10;            isDebuggable = false&#10;            proguardFiles(&#10;                getDefaultProguardFile(&quot;proguard-android-optimize.txt&quot;),&#10;                &quot;proguard-rules.pro&quot;&#10;            )&#10;            if (hasReleaseSigning) {&#10;                signingConfig = signingConfigs.getByName(&quot;release&quot;)&#10;            }&#10;        }&#10;    }&#10;&#10;    bundle {&#10;        language {&#10;            enableSplit = true&#10;        }&#10;        density {&#10;            enableSplit = true&#10;        }&#10;        abi {&#10;            enableSplit = true&#10;        }&#10;    }&#10;&#10;    compileOptions {&#10;        sourceCompatibility = JavaVersion.VERSION_17&#10;        targetCompatibility = JavaVersion.VERSION_17&#10;    }&#10;&#10;    buildFeatures {&#10;        compose = true&#10;        buildConfig = true&#10;    }&#10;&#10;    packaging {&#10;        resources.excludes += &quot;/META-INF/{AL2.0,LGPL2.1}&quot;&#10;    }&#10;}&#10;&#10;val validateReleaseSigning by tasks.registering {&#10;    group = &quot;release&quot;&#10;    description = &quot;Validates release signing configuration required for Play Store AAB builds.&quot;&#10;&#10;    doLast {&#10;        check(hasReleaseSigning) {&#10;            &quot;&quot;&quot;&#10;            Missing release signing configuration.&#10;&#10;            Create a keystore.properties file in the project root or export these environment variables:&#10;            - GOALPULSE_UPLOAD_STORE_FILE&#10;            - GOALPULSE_UPLOAD_STORE_PASSWORD&#10;            - GOALPULSE_UPLOAD_KEY_ALIAS&#10;            - GOALPULSE_UPLOAD_KEY_PASSWORD&#10;            &quot;&quot;&quot;.trimIndent()&#10;        }&#10;&#10;        val storeFile = file(releaseStoreFilePath!!)&#10;        check(storeFile.exists()) {&#10;            &quot;Release keystore file not found at: ${storeFile.absolutePath}&quot;&#10;        }&#10;    }&#10;}&#10;&#10;tasks.matching { it.name in setOf(&quot;bundleRelease&quot;, &quot;assembleRelease&quot;, &quot;packageReleaseBundle&quot;) }&#10;    .configureEach {&#10;        dependsOn(validateReleaseSigning)&#10;    }&#10;&#10;dependencies {&#10;    implementation(project(&quot;:common&quot;))&#10;    implementation(project(&quot;:core&quot;))&#10;    implementation(project(&quot;:designsystem&quot;))&#10;    implementation(project(&quot;:feature_home&quot;))&#10;    implementation(project(&quot;:feature_live&quot;))&#10;    implementation(project(&quot;:feature_match&quot;))&#10;    implementation(project(&quot;:feature_standings&quot;))&#10;    implementation(project(&quot;:feature_team&quot;))&#10;    implementation(project(&quot;:feature_profile&quot;))&#10;    implementation(project(&quot;:feature_notifications&quot;))&#10;    implementation(project(&quot;:feature_predictions&quot;))&#10;&#10;    implementation(platform(libs.androidx.compose.bom))&#10;    implementation(libs.androidx.core.ktx)&#10;    implementation(&quot;androidx.appcompat:appcompat:1.7.1&quot;)&#10;    implementation(libs.androidx.lifecycle.runtime.ktx)&#10;    implementation(libs.androidx.lifecycle.runtime.compose)&#10;    implementation(libs.androidx.lifecycle.viewmodel.compose)&#10;    implementation(libs.androidx.activity.compose)&#10;    implementation(libs.androidx.navigation.compose)&#10;    implementation(libs.androidx.core.splashscreen)&#10;    implementation(libs.androidx.compose.material3)&#10;    implementation(libs.androidx.compose.ui)&#10;    implementation(libs.androidx.compose.ui.graphics)&#10;    implementation(libs.androidx.compose.ui.tooling.preview)&#10;    implementation(libs.androidx.compose.material.icons)&#10;&#10;&#10;    implementation(platform(libs.firebase.bom))&#10;    implementation(libs.firebase.analytics)&#10;    implementation(libs.firebase.crashlytics)&#10;    implementation(libs.firebase.messaging)&#10;    implementation(libs.firebase.auth)&#10;    implementation(libs.play.services.auth)&#10;&#10;    testImplementation(libs.junit)&#10;    testImplementation(libs.mockito.core)&#10;    testImplementation(libs.mockito.kotlin)&#10;    testImplementation(libs.kotlinx.coroutines.test)&#10;    testImplementation(libs.turbine)&#10;&#10;    androidTestImplementation(platform(libs.androidx.compose.bom))&#10;    androidTestImplementation(libs.androidx.junit)&#10;    androidTestImplementation(libs.androidx.espresso.core)&#10;    androidTestImplementation(libs.androidx.compose.ui.test.junit4)&#10;&#10;    debugImplementation(libs.androidx.compose.ui.tooling)&#10;    debugImplementation(libs.androidx.compose.ui.test.manifest)&#10;}" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/common/src/main/AndroidManifest.xml">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/common/src/main/AndroidManifest.xml" />
+              <option name="updatedContent" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&lt;manifest /&gt;&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/common/src/main/java/com/prosolution/common/NetworkResult.kt">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/common/src/main/java/com/prosolution/common/NetworkResult.kt" />
+              <option name="updatedContent" value="package com.prosolution.common&#10;&#10;sealed interface NetworkResult&lt;out T&gt; {&#10;    data class Success&lt;T&gt;(val data: T) : NetworkResult&lt;T&gt;&#10;    data class Error(val message: String, val code: Int? = null) : NetworkResult&lt;Nothing&gt;&#10;    data object Loading : NetworkResult&lt;Nothing&gt;&#10;}&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/core/build.gradle.kts">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/core/build.gradle.kts" />
+              <option name="originalContent" value="plugins {&#10;    alias(libs.plugins.android.library)&#10;    alias(libs.plugins.kotlin.android)&#10;    alias(libs.plugins.kotlin.serialization)&#10;}&#10;&#10;android {&#10;    namespace = &quot;com.prosolution.core&quot;&#10;    compileSdk = 36&#10;&#10;    defaultConfig {&#10;        minSdk = 24&#10;    }&#10;&#10;    compileOptions {&#10;        sourceCompatibility = JavaVersion.VERSION_17&#10;        targetCompatibility = JavaVersion.VERSION_17&#10;    }&#10;    kotlinOptions {&#10;        jvmTarget = &quot;17&quot;&#10;    }&#10;}&#10;&#10;dependencies {&#10;    implementation(project(&quot;:common&quot;))&#10;    implementation(libs.kotlinx.coroutines.android)&#10;    implementation(libs.kotlinx.serialization.json)&#10;}&#10;" />
+              <option name="updatedContent" value="plugins {&#10;    alias(libs.plugins.android.library)&#10;    alias(libs.plugins.kotlin.serialization)&#10;}&#10;&#10;android {&#10;    namespace = &quot;com.prosolution.core&quot;&#10;    compileSdk = 36&#10;&#10;    defaultConfig {&#10;        minSdk = 24&#10;    }&#10;&#10;    compileOptions {&#10;        sourceCompatibility = JavaVersion.VERSION_17&#10;        targetCompatibility = JavaVersion.VERSION_17&#10;    }&#10;    kotlinOptions {&#10;        jvmTarget = &quot;17&quot;&#10;    }&#10;}&#10;&#10;dependencies {&#10;    implementation(project(&quot;:common&quot;))&#10;    implementation(libs.kotlinx.coroutines.android)&#10;    implementation(libs.kotlinx.serialization.json)&#10;}" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/core/src/main/AndroidManifest.xml">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/core/src/main/AndroidManifest.xml" />
+              <option name="updatedContent" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&lt;manifest /&gt;&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/core/src/main/java/com/prosolution/core/domain/repository/WorldCupRepository.kt">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/core/src/main/java/com/prosolution/core/domain/repository/WorldCupRepository.kt" />
+              <option name="updatedContent" value="package com.prosolution.core.domain.repository&#10;&#10;import com.prosolution.common.NetworkResult&#10;import com.prosolution.core.domain.model.Match&#10;import com.prosolution.core.domain.model.Standing&#10;import kotlinx.coroutines.flow.Flow&#10;&#10;interface WorldCupRepository {&#10;    fun observeLiveMatches(): Flow&lt;List&lt;Match&gt;&gt;&#10;    suspend fun refreshMatches(): NetworkResult&lt;Unit&gt;&#10;    suspend fun getSchedule(day: String?): NetworkResult&lt;List&lt;Match&gt;&gt;&#10;    suspend fun getStandings(group: String?): NetworkResult&lt;List&lt;Standing&gt;&gt;&#10;}&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/database/src/main/AndroidManifest.xml">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/database/src/main/AndroidManifest.xml" />
+              <option name="updatedContent" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&lt;manifest /&gt;&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/database/src/main/java/com/prosolution/database/Entities.kt">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/database/src/main/java/com/prosolution/database/Entities.kt" />
+              <option name="updatedContent" value="package com.prosolution.database&#10;&#10;import androidx.room.Entity&#10;import androidx.room.PrimaryKey&#10;&#10;@Entity(tableName = &quot;favorite_teams&quot;)&#10;data class FavoriteTeamEntity(&#10;    @PrimaryKey val teamId: String,&#10;    val name: String,&#10;    val crestUrl: String&#10;)&#10;&#10;@Entity(tableName = &quot;schedule_cache&quot;)&#10;data class ScheduleEntity(&#10;    @PrimaryKey val matchId: String,&#10;    val payload: String,&#10;    val fetchedAt: Long&#10;)&#10;&#10;@Entity(tableName = &quot;standings_cache&quot;)&#10;data class StandingEntity(&#10;    @PrimaryKey val id: String,&#10;    val payload: String,&#10;    val fetchedAt: Long&#10;)&#10;&#10;@Entity(tableName = &quot;predictions&quot;)&#10;data class PredictionEntity(&#10;    @PrimaryKey val id: String,&#10;    val matchId: String,&#10;    val homeScore: Int,&#10;    val awayScore: Int,&#10;    val pointsEarned: Int&#10;)&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/database/src/main/java/com/prosolution/database/GoalPulseDatabase.kt">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/database/src/main/java/com/prosolution/database/GoalPulseDatabase.kt" />
+              <option name="updatedContent" value="package com.prosolution.database&#10;&#10;import androidx.room.Database&#10;import androidx.room.RoomDatabase&#10;&#10;@Database(&#10;    entities = [&#10;        FavoriteTeamEntity::class,&#10;        ScheduleEntity::class,&#10;        StandingEntity::class,&#10;        PredictionEntity::class&#10;    ],&#10;    version = 1,&#10;    exportSchema = false&#10;)&#10;abstract class GoalPulseDatabase : RoomDatabase() {&#10;    abstract fun worldCupDao(): WorldCupDao&#10;}&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/database/src/main/java/com/prosolution/database/WorldCupDao.kt">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/database/src/main/java/com/prosolution/database/WorldCupDao.kt" />
+              <option name="updatedContent" value="package com.prosolution.database&#10;&#10;import androidx.room.Dao&#10;import androidx.room.Insert&#10;import androidx.room.OnConflictStrategy&#10;import androidx.room.Query&#10;import kotlinx.coroutines.flow.Flow&#10;&#10;@Dao&#10;interface WorldCupDao {&#10;    @Query(&quot;SELECT * FROM schedule_cache ORDER BY fetchedAt DESC&quot;)&#10;    fun observeSchedule(): Flow&lt;List&lt;ScheduleEntity&gt;&gt;&#10;&#10;    @Insert(onConflict = OnConflictStrategy.REPLACE)&#10;    suspend fun upsertSchedule(items: List&lt;ScheduleEntity&gt;)&#10;&#10;    @Query(&quot;DELETE FROM schedule_cache&quot;)&#10;    suspend fun clearSchedule()&#10;&#10;    @Query(&quot;SELECT * FROM standings_cache ORDER BY fetchedAt DESC&quot;)&#10;    fun observeStandings(): Flow&lt;List&lt;StandingEntity&gt;&gt;&#10;&#10;    @Insert(onConflict = OnConflictStrategy.REPLACE)&#10;    suspend fun upsertStandings(items: List&lt;StandingEntity&gt;)&#10;&#10;    @Insert(onConflict = OnConflictStrategy.REPLACE)&#10;    suspend fun upsertPrediction(prediction: PredictionEntity)&#10;&#10;    @Query(&quot;SELECT * FROM predictions ORDER BY pointsEarned DESC&quot;)&#10;    fun observeLeaderboard(): Flow&lt;List&lt;PredictionEntity&gt;&gt;&#10;}&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/designsystem/src/main/java/com/prosolution/designsystem/GoalPulseTheme.kt">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/designsystem/src/main/java/com/prosolution/designsystem/GoalPulseTheme.kt" />
+              <option name="updatedContent" value="package com.prosolution.designsystem&#10;&#10;import androidx.compose.foundation.isSystemInDarkTheme&#10;import androidx.compose.material3.MaterialTheme&#10;import androidx.compose.material3.darkColorScheme&#10;import androidx.compose.material3.lightColorScheme&#10;import androidx.compose.runtime.Composable&#10;import androidx.compose.ui.graphics.Color&#10;&#10;private val DarkColors = darkColorScheme(&#10;    primary = Color(0xFF00E5FF),&#10;    secondary = Color(0xFFFFCC00),&#10;    tertiary = Color(0xFFFF3B30),&#10;    background = Color(0xFF0B1020),&#10;    surface = Color(0xFF111A33)&#10;)&#10;&#10;private val LightColors = lightColorScheme(&#10;    primary = Color(0xFF007C91),&#10;    secondary = Color(0xFF9D7A00),&#10;    tertiary = Color(0xFFB71C1C),&#10;    background = Color(0xFFF5F8FF),&#10;    surface = Color(0xFFFFFFFF)&#10;)&#10;&#10;@Composable&#10;fun GoalPulseTheme(&#10;    darkTheme: Boolean = isSystemInDarkTheme(),&#10;    content: @Composable () -&gt; Unit&#10;) {&#10;    MaterialTheme(&#10;        colorScheme = if (darkTheme) DarkColors else LightColors,&#10;        typography = MaterialTheme.typography,&#10;        content = content&#10;    )&#10;}&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/docs/api-samples.json">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/docs/api-samples.json" />
+              <option name="updatedContent" value="{&#10;  &quot;matches&quot;: [&#10;    {&#10;      &quot;id&quot;: &quot;match_1001&quot;,&#10;      &quot;home_team&quot;: {&#10;        &quot;id&quot;: &quot;arg&quot;,&#10;        &quot;name&quot;: &quot;Argentina&quot;,&#10;        &quot;short_code&quot;: &quot;ARG&quot;,&#10;        &quot;crest_url&quot;: &quot;https://cdn.example.com/arg.png&quot;,&#10;        &quot;group&quot;: &quot;C&quot;&#10;      },&#10;      &quot;away_team&quot;: {&#10;        &quot;id&quot;: &quot;fra&quot;,&#10;        &quot;name&quot;: &quot;France&quot;,&#10;        &quot;short_code&quot;: &quot;FRA&quot;,&#10;        &quot;crest_url&quot;: &quot;https://cdn.example.com/fra.png&quot;,&#10;        &quot;group&quot;: &quot;D&quot;&#10;      },&#10;      &quot;start_time_utc&quot;: &quot;2026-06-18T20:00:00Z&quot;,&#10;      &quot;stadium&quot;: &quot;MetLife Stadium&quot;,&#10;      &quot;home_score&quot;: 2,&#10;      &quot;away_score&quot;: 1,&#10;      &quot;minute&quot;: 78,&#10;      &quot;status&quot;: &quot;LIVE&quot;&#10;    }&#10;  ],&#10;  &quot;standings&quot;: [&#10;    {&#10;      &quot;team&quot;: {&#10;        &quot;id&quot;: &quot;arg&quot;,&#10;        &quot;name&quot;: &quot;Argentina&quot;,&#10;        &quot;short_code&quot;: &quot;ARG&quot;,&#10;        &quot;crest_url&quot;: &quot;https://cdn.example.com/arg.png&quot;,&#10;        &quot;group&quot;: &quot;C&quot;&#10;      },&#10;      &quot;played&quot;: 3,&#10;      &quot;won&quot;: 2,&#10;      &quot;draw&quot;: 1,&#10;      &quot;lost&quot;: 0,&#10;      &quot;goals_for&quot;: 7,&#10;      &quot;goals_against&quot;: 2,&#10;      &quot;points&quot;: 7&#10;    }&#10;  ]&#10;}&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/feature_home/src/main/AndroidManifest.xml">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/feature_home/src/main/AndroidManifest.xml" />
+              <option name="updatedContent" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&lt;manifest /&gt;&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/feature_home/src/main/java/com/prosolution/feature/home/HomeUiState.kt">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/feature_home/src/main/java/com/prosolution/feature/home/HomeUiState.kt" />
+              <option name="updatedContent" value="package com.prosolution.feature.home&#10;&#10;import com.prosolution.core.domain.model.Match&#10;&#10;data class HomeUiState(&#10;    val isLoading: Boolean = true,&#10;    val liveMatches: List&lt;Match&gt; = emptyList(),&#10;    val upcomingMatches: List&lt;Match&gt; = emptyList(),&#10;    val error: String? = null&#10;)&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/feature_notifications/src/main/java/com/prosolution/feature/notifications/NotificationsScreen.kt">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/feature_notifications/src/main/java/com/prosolution/feature/notifications/NotificationsScreen.kt" />
+              <option name="updatedContent" value="package com.prosolution.feature.notifications&#10;&#10;import androidx.compose.foundation.layout.Box&#10;import androidx.compose.foundation.layout.fillMaxSize&#10;import androidx.compose.material3.MaterialTheme&#10;import androidx.compose.material3.Text&#10;import androidx.compose.runtime.Composable&#10;import androidx.compose.ui.Alignment&#10;import androidx.compose.ui.Modifier&#10;&#10;@Composable&#10;fun NotificationsRoute(modifier: Modifier = Modifier) {&#10;    Box(modifier = modifier.fillMaxSize(), contentAlignment = Alignment.Center) {&#10;        Text(&quot;Notification preferences and favorites alerts&quot;, style = MaterialTheme.typography.titleMedium)&#10;    }&#10;}&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/keystore.properties.example">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/keystore.properties.example" />
+              <option name="updatedContent" value="# Copy this file to keystore.properties and fill in your real upload key values.&#10;# Do NOT commit keystore.properties or your keystore file.&#10;&#10;storeFile=/absolute/path/to/goalpulse-upload-key.jks&#10;storePassword=CHANGE_ME&#10;keyAlias=goalpulse&#10;keyPassword=CHANGE_ME&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/network/src/main/AndroidManifest.xml">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/network/src/main/AndroidManifest.xml" />
+              <option name="updatedContent" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&lt;manifest /&gt;&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/network/src/main/java/com/prosolution/network/NetworkMappers.kt">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/network/src/main/java/com/prosolution/network/NetworkMappers.kt" />
+              <option name="updatedContent" value="package com.prosolution.network&#10;&#10;import com.prosolution.core.domain.model.Match&#10;import com.prosolution.core.domain.model.MatchStatus&#10;import com.prosolution.core.domain.model.Standing&#10;import com.prosolution.core.domain.model.Team&#10;&#10;fun MatchDto.toDomain(): Match = Match(&#10;    id = id,&#10;    homeTeam = homeTeam.toDomain(),&#10;    awayTeam = awayTeam.toDomain(),&#10;    startTimeUtc = startTimeUtc,&#10;    stadium = stadium,&#10;    homeScore = homeScore,&#10;    awayScore = awayScore,&#10;    minute = minute,&#10;    status = status.toMatchStatus()&#10;)&#10;&#10;fun StandingDto.toDomain(): Standing = Standing(&#10;    team = team.toDomain(),&#10;    played = played,&#10;    won = won,&#10;    draw = draw,&#10;    lost = lost,&#10;    goalsFor = goalsFor,&#10;    goalsAgainst = goalsAgainst,&#10;    points = points&#10;)&#10;&#10;private fun TeamDto.toDomain(): Team = Team(&#10;    id = id,&#10;    name = name,&#10;    shortCode = shortCode,&#10;    crestUrl = crestUrl,&#10;    group = group&#10;)&#10;&#10;private fun String.toMatchStatus(): MatchStatus = when (uppercase()) {&#10;    &quot;LIVE&quot; -&gt; MatchStatus.LIVE&#10;    &quot;FINISHED&quot; -&gt; MatchStatus.FINISHED&#10;    else -&gt; MatchStatus.UPCOMING&#10;}&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/network/src/main/java/com/prosolution/network/WorldCupApi.kt">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/network/src/main/java/com/prosolution/network/WorldCupApi.kt" />
+              <option name="updatedContent" value="package com.prosolution.network&#10;&#10;import kotlinx.serialization.SerialName&#10;import kotlinx.serialization.Serializable&#10;import retrofit2.http.GET&#10;import retrofit2.http.Query&#10;&#10;interface WorldCupApi {&#10;    @GET(&quot;matches&quot;)&#10;    suspend fun getMatches(&#10;        @Query(&quot;day&quot;) day: String? = null,&#10;        @Query(&quot;status&quot;) status: String? = null&#10;    ): MatchesResponse&#10;&#10;    @GET(&quot;standings&quot;)&#10;    suspend fun getStandings(@Query(&quot;group&quot;) group: String? = null): StandingsResponse&#10;}&#10;&#10;@Serializable&#10;data class MatchesResponse(&#10;    @SerialName(&quot;matches&quot;) val matches: List&lt;MatchDto&gt;&#10;)&#10;&#10;@Serializable&#10;data class StandingsResponse(&#10;    @SerialName(&quot;standings&quot;) val standings: List&lt;StandingDto&gt;&#10;)&#10;&#10;@Serializable&#10;data class MatchDto(&#10;    val id: String,&#10;    @SerialName(&quot;home_team&quot;) val homeTeam: TeamDto,&#10;    @SerialName(&quot;away_team&quot;) val awayTeam: TeamDto,&#10;    @SerialName(&quot;start_time_utc&quot;) val startTimeUtc: String,&#10;    val stadium: String,&#10;    @SerialName(&quot;home_score&quot;) val homeScore: Int,&#10;    @SerialName(&quot;away_score&quot;) val awayScore: Int,&#10;    val minute: Int,&#10;    val status: String&#10;)&#10;&#10;@Serializable&#10;data class TeamDto(&#10;    val id: String,&#10;    val name: String,&#10;    @SerialName(&quot;short_code&quot;) val shortCode: String,&#10;    @SerialName(&quot;crest_url&quot;) val crestUrl: String,&#10;    val group: String&#10;)&#10;&#10;@Serializable&#10;data class StandingDto(&#10;    val team: TeamDto,&#10;    val played: Int,&#10;    val won: Int,&#10;    val draw: Int,&#10;    val lost: Int,&#10;    @SerialName(&quot;goals_for&quot;) val goalsFor: Int,&#10;    @SerialName(&quot;goals_against&quot;) val goalsAgainst: Int,&#10;    val points: Int&#10;)&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
